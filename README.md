@@ -21,6 +21,8 @@ The manager is `Singleton` so the example usage would be as follows:
 
 ## `Helpers`
 
+Class with commonly used functions that do not belong to any other helpers.
+
 ```
     getUser() : mixed
         Get currently logged in user and timestamp 'last seen'
@@ -42,6 +44,8 @@ The manager is `Singleton` so the example usage would be as follows:
 ```
 
 ## `StringHelpers`
+
+Class with string helpers.
 
 ```
     random_str(integer  $length, string  $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ') : string
