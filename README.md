@@ -45,7 +45,9 @@ The manager is `Singleton` so the example usage would be as follows:
 
 ```
     random_str(integer  $length, string  $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ') : string
-        Method by Scott Arciszewski: https://stackoverflow.com/a/31107425 Generate a random string, using a cryptographically secure pseudorandom number generator (random_int)
+        Method by Scott Arciszewski: https://stackoverflow.com/a/31107425
+        Generate a random string, using a cryptographically secure
+        pseudorandom number generator (random_int)
         Parameters:
             integer $length How many characters do we want?
             string 	$keyspace A string of all possible characters to select from
