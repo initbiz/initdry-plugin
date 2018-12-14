@@ -48,7 +48,7 @@ class Helpers
 
         $page = Page::loadCached($theme, $pageCode);
         if (!$page) {
-            return;
+            return '';
         }
 
         $url = Page::url($page->getBaseFileName());
