@@ -1,5 +1,5 @@
 {
-  "name": "Initbiz/InitDry",
+  "name": "initbiz/oc-initdry-plugin",
   "type": "october-plugin",
   "description": "InIT.biz package with useful classes and helpers",
   "keywords": ["october", "octobercms", "plugin"],
@@ -9,9 +9,5 @@
       "name": "Tomasz Strojny",
       "email": "tomasz@init.biz"
     }
-  ],
-  "require": {
-    "php": ">=7.0",
-    "composer/installers": "~1.0"
-  }
+  ]
 }
