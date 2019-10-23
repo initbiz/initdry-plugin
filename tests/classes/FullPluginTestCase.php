@@ -13,10 +13,10 @@ abstract class FullPluginTestCase extends PluginTestCase
         $pluginManager = PluginManager::instance();
 
         // Register the plugins to make features like file configuration available
-        $pluginManager->registerAll(true);
+        $pluginManager->registerAll();
 
         // Boot all the plugins to test with dependencies of this plugin
-        $pluginManager->bootAll(true);
+        $pluginManager->bootAll();
     }
 
     public function tearDown(): void
