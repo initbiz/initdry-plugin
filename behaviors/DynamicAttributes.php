@@ -1,4 +1,4 @@
-<?php namespace Initbiz\Money\Behaviors;
+<?php namespace Initbiz\InitDry\Behaviors;
 
 use System\Classes\ModelBehavior;
 
@@ -28,7 +28,7 @@ class DynamicAttributes extends ModelBehavior
 
     public function makeDynamicAttributes()
     {
-        foreach ($this->model->dynamicAttributes as $name => $columns) {
+        foreach ($this->model->dynamicAttributes as $name) {
             $this->makeMutator($name);
             $this->makeAccessor($name);
         }
@@ -62,7 +62,7 @@ class DynamicAttributes extends ModelBehavior
 
         $model->addDynamicMethod($methodName, function () use ($model, $name, $dynamicAttributesColumn) {
             if (!isset($model->$dynamicAttributesColumn[$name])) {
-                return [];
+                return null;
             }
 
             return $model->$dynamicAttributesColumn[$name];
