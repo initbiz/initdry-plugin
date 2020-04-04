@@ -6,4 +6,7 @@
     'confirm' => [
         'delete_confirm' => 'Are you sure you want to delete the checked records?',
     ],
+    'repeater_prompt' => [
+        'add_new_item' => 'Add new item',
+    ],
 ];
