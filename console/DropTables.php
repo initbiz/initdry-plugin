@@ -25,7 +25,7 @@ class DropTables extends Command
     protected function getOptions()
     {
         return [
-            ['force', null, InputOption::VALUE_NONE, 'Force updates.'],
+            ['force', null, InputOption::VALUE_NONE, 'Force drop tables.'],
         ];
     }
 
