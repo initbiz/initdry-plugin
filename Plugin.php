@@ -8,6 +8,11 @@ use System\Classes\PluginManager;
  */
 class Plugin extends PluginBase
 {
+    public function register()
+    {
+        $this->registerConsoleCommand('initdry.droptables', 'Initbiz\InitDry\Console\DropTables');
+    }
+
     public function registerMarkupTags()
     {
         return [
