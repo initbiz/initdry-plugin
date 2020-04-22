@@ -42,7 +42,7 @@ abstract class FullPluginTestCase extends PluginTestCase
     protected function runPluginRefreshCommand($code, $throwException = true)
     {
         // Plugin refresh does not migrate all of the tables
-        // That's why we're running update here so that all migrations 
+        // That's why we're running update here so that all migrations
         // will be run by plugin:refresh command
         UpdateManager::instance()->updatePlugin($code);
         parent::runPluginRefreshCommand($code, $throwException);
