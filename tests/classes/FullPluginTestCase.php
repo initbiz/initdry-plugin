@@ -1,7 +1,11 @@
-<?php namespace Initbiz\InitDry\Tests\Classes;
+<?php
+
+namespace Initbiz\InitDry\Tests\Classes;
 
 use PluginTestCase;
 use System\Classes\PluginManager;
+use System\Classes\UpdateManager;
+use System\Classes\VersionManager;
 
 abstract class FullPluginTestCase extends PluginTestCase
 {
@@ -9,14 +13,19 @@ abstract class FullPluginTestCase extends PluginTestCase
     {
         parent::setUp();
 
+        // Version manager remembers in the databaseVersions all versions
+        // between tests even if the table in db is empty
+        VersionManager::forgetInstance();
+
         // Get the plugin manager
         $pluginManager = PluginManager::instance();
 
+        \System\Models\File::clearExtendedClasses();
         // Register the plugins to make features like file configuration available
-        $pluginManager->registerAll();
+        $pluginManager->registerAll(true);
 
         // Boot all the plugins to test with dependencies of this plugin
-        $pluginManager->bootAll();
+        $pluginManager->bootAll(true);
     }
 
     public function tearDown(): void
@@ -28,5 +37,14 @@ abstract class FullPluginTestCase extends PluginTestCase
 
         // Ensure that plugins are registered again for the next test
         $pluginManager->unregisterAll();
+    }
+
+    protected function runPluginRefreshCommand($code, $throwException = true)
+    {
+        // Plugin refresh does not migrate all of the tables
+        // That's why we're running update here so that all migrations 
+        // will be run by plugin:refresh command
+        UpdateManager::instance()->updatePlugin($code);
+        parent::runPluginRefreshCommand($code, $throwException);
     }
 }
