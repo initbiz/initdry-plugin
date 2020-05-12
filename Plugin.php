@@ -11,6 +11,7 @@ class Plugin extends PluginBase
     public function register()
     {
         $this->registerConsoleCommand('initdry.droptables', 'Initbiz\InitDry\Console\DropTables');
+        $this->registerConsoleCommand('initdry.maintenance', 'Initbiz\InitDry\Console\Maintenance');
     }
 
     public function registerMarkupTags()
