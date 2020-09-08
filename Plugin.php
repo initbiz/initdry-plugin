@@ -74,5 +74,4 @@ class Plugin extends PluginBase
         $path = $theme->getPath() . $src;
         $combiner->combineToFile([$path], $destination);
     }
-
 }
