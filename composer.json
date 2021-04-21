@@ -1,13 +1,17 @@
 {
-  "name": "initbiz/oc-initdry-plugin",
-  "type": "october-plugin",
-  "description": "InIT.biz package with useful classes and helpers",
-  "keywords": ["october", "octobercms", "plugin"],
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Tomasz Strojny",
-      "email": "tomasz@init.biz"
-    }
-  ]
+    "name": "initbiz/initdry-plugin",
+    "type": "october-plugin",
+    "description": "InIT.biz package with useful classes and helpers",
+    "keywords": [
+        "october",
+        "octobercms",
+        "plugin"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tomasz Strojny",
+            "email": "tomasz@init.biz"
+        }
+    ]
 }
