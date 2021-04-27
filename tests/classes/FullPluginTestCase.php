@@ -3,6 +3,7 @@
 namespace Initbiz\InitDry\Tests\Classes;
 
 use PluginTestCase;
+use October\Rain\Database\Model;
 use System\Classes\PluginManager;
 use System\Classes\UpdateManager;
 use System\Classes\VersionManager;
@@ -20,7 +21,9 @@ abstract class FullPluginTestCase extends PluginTestCase
         // Get the plugin manager
         $pluginManager = PluginManager::instance();
 
-        \System\Models\File::clearExtendedClasses();
+        Model::clearExtendedClasses();
+        Model::clearBootedModels();
+        Model::flushEventListeners();
         // Register the plugins to make features like file configuration available
         $pluginManager->registerAll(true);
 
