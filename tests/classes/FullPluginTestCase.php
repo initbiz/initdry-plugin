@@ -23,7 +23,10 @@ abstract class FullPluginTestCase extends PluginTestCase
 
         Model::clearExtendedClasses();
         Model::clearBootedModels();
-        Model::flushEventListeners();
+
+        // TODO: Ensure this line is not necessary to run all types of tests
+        // Model::flushEventListeners();
+
         // Register the plugins to make features like file configuration available
         $pluginManager->registerAll(true);
 
