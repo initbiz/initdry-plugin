@@ -2,6 +2,7 @@
 
 namespace Initbiz\InitDry\Tests\Classes;
 
+use Storage;
 use PluginTestCase;
 use October\Rain\Database\Model;
 use System\Classes\PluginManager;
@@ -13,6 +14,8 @@ abstract class FullPluginTestCase extends PluginTestCase
     public function setUp(): void
     {
         parent::setUp();
+
+        Storage::fake('local');
 
         // Version manager remembers in the databaseVersions all versions
         // between tests even if the table in db is empty
