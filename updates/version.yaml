@@ -3,3 +3,4 @@
 1.0.3: Fixed Helpers class
 1.0.4: Added ManageDirectory trait
 1.0.5: Fake Storage in testcase
+1.0.6: Update FullPluginTestCase to reflect the newest PluginTestCase
