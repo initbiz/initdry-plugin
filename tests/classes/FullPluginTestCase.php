@@ -6,6 +6,7 @@ use Storage;
 use PluginTestCase;
 use October\Rain\Database\Model;
 use System\Classes\PluginManager;
+use October\Rain\Extension\Container;
 
 abstract class FullPluginTestCase extends PluginTestCase
 {
@@ -18,7 +19,7 @@ abstract class FullPluginTestCase extends PluginTestCase
         // Get the plugin manager
         $pluginManager = PluginManager::instance();
 
-        Model::clearExtendedClasses();
+        Container::clearExtensions();
         Model::clearBootedModels();
 
         // Register the plugins to make features like file configuration available
@@ -30,12 +31,12 @@ abstract class FullPluginTestCase extends PluginTestCase
 
     public function tearDown(): void
     {
-        parent::tearDown();
-
         // Get the plugin manager
         $pluginManager = PluginManager::instance();
 
         // Ensure that plugins are registered again for the next test
-        $pluginManager->unregisterAll();
+        $pluginManager->unloadPlugins();
+        
+        parent::tearDown();
     }
 }
