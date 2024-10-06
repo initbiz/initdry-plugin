@@ -1,4 +1,6 @@
-<?php namespace Initbiz\InitDry\Classes;
+<?php
+
+namespace Initbiz\InitDry\Classes;
 
 use Auth;
 use Cms\Classes\Page;
@@ -12,15 +14,25 @@ class Helpers
 {
     /**
      * Get currently logged in user and timestamp 'last seen'
-     * @return mixed (User || null)
+     *
+     * @return User|null
      */
-    public static function getUser()
+    public static function getUser(): ?User
     {
-        if (!$user = Auth::getUser()) {
-            return null;
+        // RainLab.User ^3.0
+        if (class_exists(\RainLab\User\Classes\TwoFactorManager::class)) {
+            if (!$user = Auth::user()) {
+                return null;
+            }
+        } else {
+            if (!$user = Auth::getUser()) {
+                return null;
+            }
         }
 
-        $user->touchLastSeen();
+        if ($user instanceof User) {
+            $user->touchLastSeen();
+        }
 
         return $user;
     }
