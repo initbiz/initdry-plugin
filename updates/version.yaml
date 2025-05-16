@@ -7,3 +7,4 @@
 1.0.7: Update for October 3.6
 1.1.0: Update for RainLab.User 3
 1.2.0: Add FakeMailer with sendTo method
+1.3.0: Add SQLiteLegacyConnection for testing purposes
