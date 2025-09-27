@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Initbiz\InitDry\Console;
 
-use DB;
+use Db;
 use Config;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 
 /**
- * Command to drop all tables in the current DB
+ * Command to drop all tables in the current Db
  */
 class DropTables extends Command
 {
@@ -56,10 +56,10 @@ class DropTables extends Command
 
     protected function dropSQLite()
     {
-        $tables = DB::select("select name from sqlite_master where type is 'table'");
+        $tables = Db::select("select name from sqlite_master where type is 'table'");
 
         foreach ($tables as $table) {
-            DB::statement("DROP TABLE IF EXISTS $table");
+            Db::statement("DROP TABLE IF EXISTS $table");
         }
     }
 
@@ -77,10 +77,10 @@ class DropTables extends Command
 
         $droplist = implode(',', $droplist);
 
-        DB::beginTransaction();
-        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-        DB::statement("DROP TABLE $droplist");
-        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
-        DB::commit();
+        Db::beginTransaction();
+        Db::statement('SET FOREIGN_KEY_CHECKS = 0');
+        Db::statement("DROP TABLE $droplist");
+        Db::statement('SET FOREIGN_KEY_CHECKS = 1');
+        Db::commit();
     }
 }
