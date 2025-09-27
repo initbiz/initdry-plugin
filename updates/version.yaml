@@ -20,3 +20,5 @@
     - "Add SQLiteLegacyConnection for testing purposes"
 1.3.1:
     - "Clean the syntax"
+1.3.2:
+    - "DB -> Db"
