@@ -1,4 +1,8 @@
-<?php return [
+<?php
+
+declare(strict_types=1);
+
+return [
     'plugin' => [
         'name' => 'InitDry',
         'description' => 'InIT.biz package with useful classes and helpers',

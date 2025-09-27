@@ -1,4 +1,8 @@
-<?php namespace Initbiz\InitDry\Traits;
+<?php
+
+declare(strict_types=1);
+
+namespace Initbiz\InitDry\Traits;
 
 use Symfony\Component\Process\Process;
 
@@ -81,7 +85,7 @@ trait ManageDirectory
             unlink($file);
         } else {
             // Just to be sure that we don't delete "too much" by accident...
-            if (\in_array($file, ['*', '**', '.', '..', '/', '/*'])) {
+            if (\in_array($file, ['*', '**', '.', '..', '/', '/*'], true)) {
                 return;
             }
 

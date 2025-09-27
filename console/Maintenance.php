@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Initbiz\InitDry\Console;
 
 use Illuminate\Console\Command;

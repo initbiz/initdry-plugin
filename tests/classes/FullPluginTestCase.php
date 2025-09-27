@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Initbiz\InitDry\Tests\Classes;
 
 use Storage;
@@ -36,7 +38,7 @@ abstract class FullPluginTestCase extends PluginTestCase
 
         // Ensure that plugins are registered again for the next test
         $pluginManager->unloadPlugins();
-        
+
         parent::tearDown();
     }
 }

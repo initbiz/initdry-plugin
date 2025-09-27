@@ -1,4 +1,8 @@
-<?php namespace Initbiz\InitDry\Classes;
+<?php
+
+declare(strict_types=1);
+
+namespace Initbiz\InitDry\Classes;
 
 /**
  * Class with string helpers
@@ -19,7 +23,7 @@ class StringHelpers
         $pieces = [];
         $max = mb_strlen($keyspace, '8bit') - 1;
         for ($i = 0; $i < $length; ++$i) {
-            $pieces []= $keyspace[random_int(0, $max)];
+            $pieces [] = $keyspace[random_int(0, $max)];
         }
         return implode('', $pieces);
     }

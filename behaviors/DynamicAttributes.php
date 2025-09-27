@@ -1,9 +1,13 @@
-<?php namespace Initbiz\InitDry\Behaviors;
+<?php
+
+declare(strict_types=1);
+
+namespace Initbiz\InitDry\Behaviors;
 
 use System\Classes\ModelBehavior;
 
 /**
- * Behavior that adds dynamic accessors and mutators to model 
+ * Behavior that adds dynamic accessors and mutators to model
  * and stores the values in one jsonable column
  */
 
@@ -39,8 +43,8 @@ class DynamicAttributes extends ModelBehavior
 
     public function makeMutator($name)
     {
-        $methodName = 'set'.studly_case($name).'Attribute';
-        
+        $methodName = 'set' . studly_case($name) . 'Attribute';
+
         $model = $this->model;
         $dynamicAttributesColumn = $this->dynamicAttributesColumn;
 
@@ -55,8 +59,8 @@ class DynamicAttributes extends ModelBehavior
 
     public function makeAccessor($name)
     {
-        $methodName = 'get'.studly_case($name).'Attribute';
-        
+        $methodName = 'get' . studly_case($name) . 'Attribute';
+
         $model = $this->model;
         $dynamicAttributesColumn = $this->dynamicAttributesColumn;
 

@@ -1,4 +1,8 @@
-<?php namespace Initbiz\InitDry;
+<?php
+
+declare(strict_types=1);
+
+namespace Initbiz\InitDry;
 
 use File;
 use Cache;
@@ -13,7 +17,7 @@ use System\Classes\PluginManager;
  */
 class Plugin extends PluginBase
 {
-    static $rebootCssCacheKey = 'reboot-css.last-modified';
+    public static $rebootCssCacheKey = 'reboot-css.last-modified';
 
     public function register()
     {
@@ -33,7 +37,7 @@ class Plugin extends PluginBase
 
     public function hasPlugin($pluginCode)
     {
-        if(empty($pluginCode)) {
+        if (empty($pluginCode)) {
             return false;
         }
 
@@ -52,10 +56,10 @@ class Plugin extends PluginBase
             $theme = Theme::getActiveTheme();
             $path = $theme->getPath() . $src;
             $lastMod = File::lastModified($path);
-            if ($lastMod !== Cache::get(Self::$rebootCssCacheKey)) {
+            if ($lastMod !== Cache::get(self::$rebootCssCacheKey)) {
                 $this->compileRebootCss();
                 $lastMod = File::lastModified($path);
-                Cache::forever(Self::$rebootCssCacheKey, $lastMod);
+                Cache::forever(self::$rebootCssCacheKey, $lastMod);
             }
         } else {
             $this->compileRebootCss();

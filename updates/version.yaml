@@ -1,10 +1,22 @@
-1.0.1: First version of InitDry
-1.0.2: Fixed docs, added string helpers
-1.0.3: Fixed Helpers class
-1.0.4: Added ManageDirectory trait
-1.0.5: Fake Storage in testcase
-1.0.6: Update FullPluginTestCase to reflect the newest PluginTestCase
-1.0.7: Update for October 3.6
-1.1.0: Update for RainLab.User 3
-1.2.0: Add FakeMailer with sendTo method
-1.3.0: Add SQLiteLegacyConnection for testing purposes
+1.0.1:
+    - "First version of InitDry"
+1.0.2:
+    - "Fixed docs, added string helpers"
+1.0.3:
+    - "Fixed Helpers class"
+1.0.4:
+    - "Added ManageDirectory trait"
+1.0.5:
+    - "Fake Storage in testcase"
+1.0.6:
+    - "Update FullPluginTestCase to reflect the newest PluginTestCase"
+1.0.7:
+    - "Update for October 3.6"
+1.1.0:
+    - "Update for RainLab.User 3"
+1.2.0:
+    - "Add FakeMailer with sendTo method"
+1.3.0:
+    - "Add SQLiteLegacyConnection for testing purposes"
+1.3.1:
+    - "Clean the syntax"
