@@ -1,4 +1,8 @@
-<?php namespace Initbiz\InitDry\Classes;
+<?php
+
+declare(strict_types=1);
+
+namespace Initbiz\InitDry\Classes;
 
 use System\Classes\PluginManager;
 use October\Rain\Support\Singleton;
