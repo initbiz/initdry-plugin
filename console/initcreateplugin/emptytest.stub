@@ -1,0 +1,15 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{studly_author}}\{{studly_plugin}};
+
+use PluginTestCase;
+
+class EmptyTest extends PluginTestCase
+{
+    public function testDummy(): void
+    {
+        $this->assertTrue(true);
+    }
+}

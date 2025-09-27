@@ -22,3 +22,5 @@
     - "Clean the syntax"
 1.3.2:
     - "DB -> Db"
+1.4.0:
+    - "Introduce init:create:plugin command"

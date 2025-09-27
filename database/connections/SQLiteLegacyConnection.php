@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Initbiz\InitDry\Database\Connections;
 
 use Illuminate\Filesystem\Filesystem;
@@ -44,7 +46,7 @@ class SQLiteLegacyConnection extends Connection
      */
     protected function getDefaultQueryGrammar()
     {
-        return $this->withTablePrefix(new QueryGrammar);
+        return $this->withTablePrefix(new QueryGrammar());
     }
 
     /**
@@ -68,7 +70,7 @@ class SQLiteLegacyConnection extends Connection
      */
     protected function getDefaultSchemaGrammar()
     {
-        return $this->withTablePrefix(new SchemaGrammar);
+        return $this->withTablePrefix(new SchemaGrammar());
     }
 
     /**
@@ -91,7 +93,7 @@ class SQLiteLegacyConnection extends Connection
      */
     protected function getDefaultPostProcessor()
     {
-        return new SQLiteProcessor;
+        return new SQLiteProcessor();
     }
 
     /**
@@ -101,7 +103,7 @@ class SQLiteLegacyConnection extends Connection
      */
     protected function getDoctrineDriver()
     {
-        return new SQLiteDriver;
+        return new SQLiteDriver();
     }
 
     /**

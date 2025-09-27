@@ -1,0 +1,7 @@
+{
+    "name": "{{lower_author}}/{{lower_plugin}}-plugin",
+    "type": "october-plugin",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}
