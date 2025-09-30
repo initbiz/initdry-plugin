@@ -24,3 +24,5 @@
     - "DB -> Db"
 1.4.0:
     - "Introduce init:create:plugin command"
+1.5.0:
+    - "Add .gitignore to init:create:plugin command"
