@@ -26,3 +26,5 @@
     - "Introduce init:create:plugin command"
 1.5.0:
     - "Add .gitignore to init:create:plugin command"
+1.6.0:
+    - "Add public assets settings & Twig helpers"
