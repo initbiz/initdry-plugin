@@ -1,0 +1,14 @@
+fields:
+    icon:
+        label: initbiz.initdry::lang.public_asset_setting.icon_label
+        comment: initbiz.initdry::lang.public_asset_setting.icon_comment
+        type: fileupload
+        mode: image
+        span: left
+
+    logo:
+        label: initbiz.initdry::lang.public_asset_setting.logo_label
+        comment: initbiz.initdry::lang.public_asset_setting.logo_comment
+        type: fileupload
+        mode: image
+        span: right

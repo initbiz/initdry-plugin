@@ -3,3 +3,17 @@ plugin:
     description: 'initbiz.initdry::lang.plugin.description'
     author: Initbiz
     icon: oc-icon-recycle
+
+permissions:
+    initbiz.initdry.access_manage_public_assets:
+        tab: initbiz.initdry::lang.permissions.settings_tab
+        label: initbiz.initdry::lang.permissions.access_manage_public_assets
+
+settings:
+    manage_public_assets:
+        label: initbiz.initdry::lang.public_asset_setting.settings_label
+        description: initbiz.initdry::lang.public_asset_setting.settings_description
+        icon: icon-image
+        class: Initbiz\InitDry\Models\PublicAssetSetting
+        permissions:
+            - initbiz.initdry.access_manage_public_assets
