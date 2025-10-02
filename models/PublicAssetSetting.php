@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Initbiz\InitDry\Models;
 
 use System\Models\SettingModel;
