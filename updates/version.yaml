@@ -26,3 +26,7 @@
     - "Introduce init:create:plugin command"
 1.5.0:
     - "Add .gitignore to init:create:plugin command"
+1.6.0:
+    - "Add public assets settings & Twig helpers"
+1.7.0:
+    - "Disable SonarQube warning in Plugin.php stub + add Polish lang file"
