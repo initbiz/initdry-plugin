@@ -11,6 +11,7 @@ use Cms\Classes\Theme;
 use System\Classes\PluginBase;
 use System\Classes\CombineAssets;
 use System\Classes\PluginManager;
+use Initbiz\InitDry\Models\PublicAssetSetting;
 
 /**
  * InitDry Plugin Information File
@@ -32,6 +33,8 @@ class Plugin extends PluginBase
             'functions' => [
                 'hasPlugin' => [$this, 'hasPlugin'],
                 'rebootingStyles' => [$this, 'rebootingStyles'],
+                'publicLogoUrl' => [PublicAssetSetting::class, 'getPublicLogoUrl'],
+                'publicIconUrl' => [PublicAssetSetting::class, 'getPublicIconUrl'],
             ]
         ];
     }
