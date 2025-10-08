@@ -8,6 +8,7 @@ use System\Classes\PluginBase;
 
 /**
  * {{studly_plugin}} Information File
+ * @SuppressWarnings("php:S1448") ignore "too many methods"
  */
 class Plugin extends PluginBase
 {
