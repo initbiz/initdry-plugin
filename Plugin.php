@@ -25,6 +25,14 @@ class Plugin extends PluginBase
         $this->registerConsoleCommand('initdry.droptables', \Initbiz\InitDry\Console\DropTables::class);
         $this->registerConsoleCommand('initdry.maintenance', \Initbiz\InitDry\Console\Maintenance::class);
         $this->registerConsoleCommand('init.create.plugin', \Initbiz\InitDry\Console\InitCreatePlugin::class);
+
+        if (class_exists('\NunoMaduro\Collision\Adapters\Laravel\CollisionServiceProvider')) {
+            // Restore default October's exception handler after installing Nunomaduro/collision
+            $this->app->singleton(
+                \Illuminate\Contracts\Debug\ExceptionHandler::class,
+                \October\Rain\Foundation\Exception\Handler::class
+            );
+        }
     }
 
     public function registerMarkupTags()
