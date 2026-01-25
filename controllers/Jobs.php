@@ -35,10 +35,6 @@ class Jobs extends Controller
      */
     public $requiredPermissions = ['initbiz.initdry.access_jobs'];
 
-    public $jsonable = [
-        'payload',
-    ];
-
     /**
      * __construct the controller
      */
