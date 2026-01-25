@@ -1,0 +1,16 @@
+columns:
+    id:
+        label: initbiz.initdry::lang.failed_job.id
+
+    connection:
+        label: initbiz.initdry::lang.failed_job.connection
+
+    queue:
+        label: initbiz.initdry::lang.failed_job.queue
+
+    failed_at:
+        label: initbiz.initdry::lang.failed_job.failed_at
+        type: date
+
+    payload:
+        label: initbiz.initdry::lang.failed_job.payload
