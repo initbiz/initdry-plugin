@@ -1,0 +1,19 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: initbiz.initdry::lang.failed_jobs.record_name
+
+# Model Form Field configuration
+form: $/initbiz/initdry/models/failedjob/fields.yaml
+
+# Model Class name
+modelClass: Initbiz\InitDry\Models\FailedJob
+
+# Default redirect location
+defaultRedirect: initbiz/initdry/failedjobs
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

@@ -1,0 +1,19 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: initbiz.initdry::lang.jobs.record_name
+
+# Model Form Field configuration
+form: $/initbiz/initdry/models/job/fields.yaml
+
+# Model Class name
+modelClass: Initbiz\InitDry\Models\Job
+
+# Default redirect location
+defaultRedirect: initbiz/initdry/jobs
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

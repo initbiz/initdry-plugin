@@ -32,3 +32,5 @@
     - "Disable SonarQube warning in Plugin.php stub + add Polish lang file"
 1.8.0:
     - "Restore default October's exception handler after installing Nunomaduro/collision"
+1.9.0:
+    - "Browsing queue jobs and failed jobs tables from backend controller"

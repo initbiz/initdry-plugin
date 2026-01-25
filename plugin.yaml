@@ -9,6 +9,14 @@ permissions:
         tab: initbiz.initdry::lang.permissions.settings_tab
         label: initbiz.initdry::lang.permissions.access_manage_public_assets
 
+    initbiz.initdry.access_jobs:
+        tab: initbiz.initdry::lang.permissions.settings_tab
+        label: initbiz.initdry::lang.permissions.access_jobs
+
+    initbiz.initdry.access_failed_jobs:
+        tab: initbiz.initdry::lang.permissions.settings_tab
+        label: initbiz.initdry::lang.permissions.access_failed_jobs
+
 settings:
     manage_public_assets:
         label: initbiz.initdry::lang.public_asset_setting.settings_label
@@ -17,3 +25,21 @@ settings:
         class: Initbiz\InitDry\Models\PublicAssetSetting
         permissions:
             - initbiz.initdry.access_manage_public_assets
+
+    jobs:
+        label: initbiz.initdry::lang.jobs.label
+        category: initbiz.initdry::lang.jobs.queue_category
+        description: initbiz.initdry::lang.jobs.description
+        icon: icon-step-forward
+        url: initbiz/initdry/jobs
+        permissions:
+            - initbiz.initdry.access_jobs
+
+    failed_jobs:
+        label: initbiz.initdry::lang.failed_jobs.label
+        category: initbiz.initdry::lang.jobs.queue_category
+        description: initbiz.initdry::lang.failed_jobs.description
+        icon: icon-fire
+        url: initbiz/initdry/failedjobs
+        permissions:
+            - initbiz.initdry.access_failed_jobs
