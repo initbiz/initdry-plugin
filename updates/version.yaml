@@ -34,3 +34,5 @@
     - "Restore default October's exception handler after installing Nunomaduro/collision"
 1.9.0:
     - "Browsing queue jobs and failed jobs tables from backend controller"
+1.10.0:
+    - "Add InIT flavoured plugin test case, that fakes mailer, storage, etc."
