@@ -1,0 +1,15 @@
+<?php
+
+declare(strict_types=1);
+
+use Initbiz\Linter\Classes\DangerConfigMaker;
+
+include_once 'classes/DangerConfigMaker.php';
+
+$configMaker = new DangerConfigMaker();
+
+// Enable rules below
+
+$configMaker->enableRule('dangerrules/VersionYamlUpdatedRule.php');
+
+return $configMaker->getConfig();
