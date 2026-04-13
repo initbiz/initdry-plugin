@@ -4,12 +4,7 @@ declare(strict_types=1);
 
 namespace Initbiz\InitDry\EventHandlers;
 
-use App;
-use Lang;
-use System;
 use RainLab\User\Models\User;
-use RainLab\User\Controllers\Users;
-use Initbiz\CumulusCore\Models\Cluster;
 
 class RainlabUserHandler
 {
