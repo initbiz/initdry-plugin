@@ -36,3 +36,5 @@
     - "Browsing queue jobs and failed jobs tables from backend controller"
 1.10.0:
     - "Add InIT flavoured plugin test case, that fakes mailer, storage, etc."
+1.11.0:
+    - "Add new stubs for create plugin"
