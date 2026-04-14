@@ -19,7 +19,7 @@ Linter:
         - .rules-mr-events
         - .setup-project-playground
     script:
-        - composer require initbiz/linter-plugin:dev-${CI_MERGE_REQUEST_SOURCE_BRANCH_NAME}
+        - composer require initbiz/initdry-plugin:dev-${CI_MERGE_REQUEST_SOURCE_BRANCH_NAME}
         - php artisan linter:code -b plugins/initbiz/initdry
 
 Danger-PHP:
