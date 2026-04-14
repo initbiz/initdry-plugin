@@ -28,6 +28,6 @@ Danger-PHP:
         name: ghcr.io/shyim/danger-php:latest
         entrypoint: [""]
     script:
-        - git clone git@git.init.biz:october/linter-plugin.git
         - apk add --no-cache git
+        - git clone git@git.init.biz:october/linter-plugin.git
         - danger ci
