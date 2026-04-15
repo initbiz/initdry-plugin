@@ -45,7 +45,8 @@ class Helpers
      */
     public static function getFileListToDropdown(): array
     {
-        return Page::sortBy('baseFileName')->lists('baseFileName', 'baseFileName');
+        $theme = Theme::getActiveTheme();
+        return Page::inTheme($theme)->sortBy('baseFileName')->lists('baseFileName', 'baseFileName');
     }
 
     /**
