@@ -38,7 +38,7 @@ class Plugin extends PluginBase
 
     public function boot()
     {
-        Event::subscribe(\Initbiz\InitDry\EventHandlers\RainlabUserHandler::class);
+        Event::subscribe(\Initbiz\InitDry\EventHandlers\RainlabUser2CompatibilityHandler::class);
     }
 
     public function registerMarkupTags()

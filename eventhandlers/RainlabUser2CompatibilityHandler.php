@@ -6,7 +6,7 @@ namespace Initbiz\InitDry\EventHandlers;
 
 use RainLab\User\Models\User;
 
-class RainlabUserHandler
+class RainlabUser2CompatibilityHandler
 {
     public function subscribe($event)
     {
