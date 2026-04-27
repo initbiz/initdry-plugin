@@ -38,3 +38,5 @@
     - "Add InIT flavoured plugin test case, that fakes mailer, storage, etc."
 1.11.0:
     - "Add new stubs for create plugin"
+1.12.0:
+    - "Add accessor and mutator for user's name and surname"

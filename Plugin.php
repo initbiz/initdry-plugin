@@ -6,6 +6,7 @@ namespace Initbiz\InitDry;
 
 use File;
 use Cache;
+use Event;
 use Config;
 use Cms\Classes\Theme;
 use System\Classes\PluginBase;
@@ -33,6 +34,11 @@ class Plugin extends PluginBase
                 \October\Rain\Foundation\Exception\Handler::class
             );
         }
+    }
+
+    public function boot()
+    {
+        Event::subscribe(\Initbiz\InitDry\EventHandlers\RainlabUser2CompatibilityHandler::class);
     }
 
     public function registerMarkupTags()
