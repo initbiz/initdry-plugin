@@ -4,24 +4,16 @@ declare(strict_types=1);
 
 namespace Initbiz\InitDry\EventHandlers;
 
-use Schema;
 use RainLab\User\Models\User;
 
 class RainlabUser2CompatibilityHandler
 {
     public function subscribe($event)
     {
-        // RainLab.User v3 compatibility
-        if (Schema::hasColumn('users', 'first_name')) {
+        if (\Schema::hasColumn('users', 'first_name')) {
             $this->addNameAndSurnameAccessor($event);
-        }
-
-        // RainLab.User v2 compatibility
-        if (!Schema::hasColumn('users', 'first_name')) {
+        } else {
             $this->addFirstNameAndLastNameAccessor($event);
-        }
-
-        if (Schema::hasColumn('users', 'is_activated')) {
             $this->addActivatedAtAccessor($event);
         }
     }
