@@ -43,3 +43,5 @@
 1.12.1:
     - "Update accessor and mutator for user's name and surname"
     - "Add mutator for 'is_activated' status"
+1.12.2:
+    - "Fixed PHP deprecation warning for implicitly nullable Theme parameter."
