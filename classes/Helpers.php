@@ -52,10 +52,10 @@ class Helpers
     /**
      * Get url of page using page code
      * @param  string $pageCode page code
-     * @param  Theme $theme     theme object
+     * @param  ?Theme $theme     theme object
      * @return string           url
      */
-    public static function getPageUrl(string $pageCode, Theme $theme = null): string
+    public static function getPageUrl(string $pageCode, ?Theme $theme = null): string
     {
         if (!$theme) {
             $theme = Theme::getActiveTheme();
