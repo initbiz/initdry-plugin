@@ -45,3 +45,5 @@
     - "Add mutator for 'is_activated' status"
 1.12.2:
     - "Fixed PHP deprecation warning for implicitly nullable Theme parameter."
+1.12.3:
+    - "Updated gitlab-ci stub for inIT create plugin"
