@@ -47,3 +47,5 @@
     - "Fixed PHP deprecation warning for implicitly nullable Theme parameter."
 1.12.3:
     - "Updated gitlab-ci stub for inIT create plugin"
+1.12.4:
+    - "Update danger stub"
