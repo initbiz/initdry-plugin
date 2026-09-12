@@ -49,3 +49,5 @@
     - "Updated gitlab-ci stub for inIT create plugin"
 1.12.4:
     - "Update danger stub"
+1.13.0:
+    - "Add pipeline to synchronize repository with GitHub."
