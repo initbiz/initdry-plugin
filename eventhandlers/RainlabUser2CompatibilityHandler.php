@@ -5,12 +5,19 @@ declare(strict_types=1);
 namespace Initbiz\InitDry\EventHandlers;
 
 use RainLab\User\Models\User;
+use System\Classes\VersionManager;
 
+/**
+ * RainLab.User v3 is the version that renamed the
+ * name/surname columns to first_name/last_name (see migrate_v3_0_0.php).
+ */
 class RainlabUser2CompatibilityHandler
 {
     public function subscribe($event)
     {
-        if (\Schema::hasColumn('users', 'first_name')) {
+        $version = VersionManager::instance()->getLatestVersion('RainLab.User');
+
+        if ($version && version_compare($version, '3.0.0', '>=')) {
             $this->addNameAndSurnameAccessor($event);
         } else {
             $this->addFirstNameAndLastNameAccessor($event);
@@ -18,10 +25,10 @@ class RainlabUser2CompatibilityHandler
         }
     }
 
-    // RainLab.User v3 compatibility
     public function addNameAndSurnameAccessor($event)
     {
         User::extend(function ($model) {
+            $model->append(['name', 'surname']);
 
             $model->addDynamicMethod('getNameAttribute', function () use ($model) {
                 return $model->first_name;
@@ -45,6 +52,7 @@ class RainlabUser2CompatibilityHandler
     public function addFirstNameAndLastNameAccessor($event)
     {
         User::extend(function ($model) {
+            $model->append(['first_name', 'last_name']);
 
             $model->addDynamicMethod('getFirstNameAttribute', function () use ($model) {
                 return $model->name;

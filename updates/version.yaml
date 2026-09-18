@@ -51,3 +51,5 @@
     - "Update danger stub"
 1.13.0:
     - "Add pipeline to synchronize repository with GitHub."
+1.13.1:
+    - "Use VersionManager instead of schema"
