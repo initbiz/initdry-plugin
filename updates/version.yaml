@@ -53,3 +53,5 @@
     - "Add pipeline to synchronize repository with GitHub."
 1.13.1:
     - "Use VersionManager instead of schema"
+1.13.2:
+    - "Ensure we don't need RainLab.User to operate"

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Initbiz\InitDry\EventHandlers;
 
 use RainLab\User\Models\User;
+use System\Classes\PluginManager;
 use System\Classes\VersionManager;
 
 /**
@@ -15,6 +16,10 @@ class RainlabUser2CompatibilityHandler
 {
     public function subscribe($event)
     {
+        if (!PluginManager::instance()->hasPlugin('RainLab.User')) {
+            return;
+        }
+
         $version = VersionManager::instance()->getLatestVersion('RainLab.User');
 
         if ($version && version_compare($version, '3.0.0', '>=')) {
