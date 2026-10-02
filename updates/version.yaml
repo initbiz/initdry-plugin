@@ -55,3 +55,5 @@
     - "Use VersionManager instead of schema"
 1.13.2:
     - "Ensure we don't need RainLab.User to operate"
+1.13.3:
+    - "Update documentation"
