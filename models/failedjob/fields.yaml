@@ -1,0 +1,23 @@
+fields:
+    id:
+        label: initbiz.initdry::lang.failed_job.id
+        span: auto
+
+    connection:
+        label: initbiz.initdry::lang.failed_job.connection
+        span: auto
+
+    queue:
+        label: initbiz.initdry::lang.failed_job.queue
+        span: auto
+
+    failed_at:
+        label: initbiz.initdry::lang.failed_job.failed_at
+        span: auto
+        type: datepicker
+
+    payload:
+        label: initbiz.initdry::lang.failed_job.payload
+
+    exception:
+        label: initbiz.initdry::lang.failed_job.exception

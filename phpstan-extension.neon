@@ -1,0 +1,3 @@
+parameters:
+    excludePaths:
+        - '%rootDir%/../../../plugins/*/*/database/connections/*.php'

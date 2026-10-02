@@ -1,0 +1,30 @@
+fields:
+    id:
+        label: initbiz.initdry::lang.job.id
+        span: auto
+
+    queue:
+        label: initbiz.initdry::lang.job.queue
+        span: auto
+
+    attempts:
+        label: initbiz.initdry::lang.job.attempts
+        span: auto
+
+    reserved_at:
+        label: initbiz.initdry::lang.job.reserved_at
+        type: datepicker
+        span: auto
+
+    available_at:
+        label: initbiz.initdry::lang.job.available_at
+        type: datepicker
+        span: auto
+
+    created_at:
+        label: initbiz.initdry::lang.job.created_at
+        type: datepicker
+        span: auto
+
+    payload:
+        label: initbiz.initdry::lang.job.payload

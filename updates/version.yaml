@@ -32,3 +32,26 @@
     - "Disable SonarQube warning in Plugin.php stub + add Polish lang file"
 1.8.0:
     - "Restore default October's exception handler after installing Nunomaduro/collision"
+1.9.0:
+    - "Browsing queue jobs and failed jobs tables from backend controller"
+1.10.0:
+    - "Add InIT flavoured plugin test case, that fakes mailer, storage, etc."
+1.11.0:
+    - "Add new stubs for create plugin"
+1.12.0:
+    - "Add accessor and mutator for user's name and surname"
+1.12.1:
+    - "Update accessor and mutator for user's name and surname"
+    - "Add mutator for 'is_activated' status"
+1.12.2:
+    - "Fixed PHP deprecation warning for implicitly nullable Theme parameter."
+1.12.3:
+    - "Updated gitlab-ci stub for inIT create plugin"
+1.12.4:
+    - "Update danger stub"
+1.13.0:
+    - "Add pipeline to synchronize repository with GitHub."
+1.13.1:
+    - "Use VersionManager instead of schema"
+1.13.2:
+    - "Ensure we don't need RainLab.User to operate"

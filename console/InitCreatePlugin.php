@@ -39,5 +39,7 @@ class InitCreatePlugin extends CreatePlugin
         $this->makeStub('initcreateplugin/lang.stub', 'lang/pl/lang.php');
         $this->makeStub('initcreateplugin/composer.stub', 'composer.json');
         $this->makeStub('initcreateplugin/gitignore.stub', '.gitignore');
+        $this->makeStub('initcreateplugin/danger.stub', '.danger.php');
+        $this->makeStub('initcreateplugin/gitlab-ci.stub', '.gitlab-ci.yml');
     }
 }

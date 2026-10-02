@@ -1,0 +1,24 @@
+columns:
+    id:
+        label: initbiz.initdry::lang.job.id
+
+    queue:
+        label: initbiz.initdry::lang.job.queue
+
+    attempts:
+        label: initbiz.initdry::lang.job.attempts
+
+    reserved_at:
+        label: initbiz.initdry::lang.job.reserved_at
+        type: date
+
+    available_at:
+        label: initbiz.initdry::lang.job.available_at
+        type: date
+
+    created_at:
+        label: initbiz.initdry::lang.job.created_at
+        type: date
+
+    payload:
+        label: initbiz.initdry::lang.job.payload
