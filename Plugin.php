@@ -26,6 +26,7 @@ class Plugin extends PluginBase
         $this->registerConsoleCommand('initdry.droptables', \Initbiz\InitDry\Console\DropTables::class);
         $this->registerConsoleCommand('initdry.maintenance', \Initbiz\InitDry\Console\Maintenance::class);
         $this->registerConsoleCommand('init.create.plugin', \Initbiz\InitDry\Console\InitCreatePlugin::class);
+        $this->registerConsoleCommand('initdry.cleannotificationrules', \Initbiz\InitDry\Console\CleanNotificationRules::class);
 
         if (class_exists('\NunoMaduro\Collision\Adapters\Laravel\CollisionServiceProvider')) {
             // Restore default October's exception handler after installing Nunomaduro/collision
