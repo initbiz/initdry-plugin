@@ -57,3 +57,6 @@
     - "Ensure we don't need RainLab.User to operate"
 1.13.3:
     - "Update documentation"
+1.14.0:
+    - "Remove RainLab.Notify rules referencing classes that no longer exist"
+    - 1_14_0_clean_notification_rules.php
