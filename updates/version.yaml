@@ -59,3 +59,5 @@
     - "Update documentation"
 1.14.0:
     - "Remove RainLab.Notify rules referencing classes that no longer exist"
+1.15.0:
+    - "Traits to handle soft deletes with many to many relations and nested tree"
