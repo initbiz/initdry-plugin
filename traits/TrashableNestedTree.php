@@ -51,6 +51,25 @@ trait TrashableNestedTree
         });
     }
 
+    /**
+     * Only the children trashed together with the node come back, with their own events and relations
+     */
+    public function restoreDescendants()
+    {
+        $deletedAt = $this->getPrevious()[$this->getDeletedAtColumn()] ?? null;
+        if ($deletedAt === null) {
+            return;
+        }
+
+        $children = $this->children()->onlyTrashed()
+            ->where($this->getQualifiedDeletedAtColumn(), '>=', $deletedAt)
+            ->get();
+
+        foreach ($children as $child) {
+            $child->restore();
+        }
+    }
+
     public function shiftSiblingsForRestore()
     {
         // The trashed node kept its place in the tree
