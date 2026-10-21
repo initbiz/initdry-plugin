@@ -5,12 +5,30 @@ declare(strict_types=1);
 namespace Initbiz\InitDry\Traits;
 
 /**
- * October's SoftDelete, but restoring a record brings back only the dependents trashed together with it,
- * the ones trashed before stay in the trash
+ * October's SoftDelete, but the record goes to the trash before its dependents, and restoring it brings back
+ * only the dependents trashed together with it, the ones trashed before stay in the trash
  */
 trait SoftDelete
 {
-    use \October\Rain\Database\Traits\SoftDelete;
+    use \October\Rain\Database\Traits\SoftDelete {
+        performDeleteOnModel as octoberPerformDeleteOnModel;
+    }
+
+    protected function performDeleteOnModel()
+    {
+        // Deleting for good keeps October's order, the dependents first
+        if ($this->forceDeleting || !$this->isSoftDeleteEnabled()) {
+            $this->octoberPerformDeleteOnModel();
+
+            return;
+        }
+
+        // The dependents are trashed after the record, so never before it, however long it takes
+        $this->getConnection()->transaction(function () {
+            $this->runSoftDelete();
+            $this->performSoftDeleteOnRelations();
+        });
+    }
 
     protected function performRestoreOnRelations()
     {

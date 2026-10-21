@@ -63,3 +63,5 @@
     - "Traits to handle soft deletes with many to many relations and nested tree"
 1.16.0:
     - "Restore from the trash only the records trashed together with their parent"
+1.16.1:
+    - "Trash records before their dependents and restore only the dependents trashed together with them"
