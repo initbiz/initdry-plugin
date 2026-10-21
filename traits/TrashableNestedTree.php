@@ -12,9 +12,23 @@ trait TrashableNestedTree
 {
     use \October\Rain\Database\Traits\NestedTree;
 
+    public function initializeTrashableNestedTree(): void
+    {
+        // After the node, so that the children are never trashed before it
+        $this->bindEvent('model.afterDelete', function () {
+            if (!$this->isSoftDelete()) {
+                return;
+            }
+
+            foreach ($this->children()->get() as $child) {
+                $child->delete();
+            }
+        });
+    }
+
     /**
-     * Trashing the children doesn't shift the tree; force deleting removes them one by one,
-     * also the ones in the trash, with their own events and relations
+     * Force deleting removes the children one by one, also the ones in the trash, with their own events
+     * and relations; trashing them, after the node, doesn't shift the tree
      */
     public function deleteDescendants()
     {
@@ -23,10 +37,6 @@ trait TrashableNestedTree
         }
 
         if ($this->isSoftDelete()) {
-            foreach ($this->children()->get() as $child) {
-                $child->delete();
-            }
-
             return;
         }
 
