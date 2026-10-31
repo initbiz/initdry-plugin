@@ -20,12 +20,14 @@ include:
       inputs:
           github_repo_url: "https://initbiz-machine-user:${GITHUB_MACHINE_USER_WRITE_TOKEN}@github.com/{{lower_author}}/{{lower_plugin}}-plugin.git"
 
+    - component: $CI_SERVER_FQDN/operational/gitlab-ci-components/install-plugin-from-branch@1
+
 Tests:
     extends:
         - .rules-mr-events
         - .setup-project-playground-4
     script:
-        - composer require {{lower_author}}/{{lower_plugin}}-plugin:dev-${CI_MERGE_REQUEST_SOURCE_BRANCH_NAME}
+        - !reference [.install-plugin-from-branch, script]
         - vendor/bin/pest --parallel --ci --bail
 
 Tests-october-3:
@@ -33,7 +35,7 @@ Tests-october-3:
         - .rules-mr-events
         - .setup-project-playground-3
     script:
-        - composer require {{lower_author}}/{{lower_plugin}}-plugin:dev-${CI_MERGE_REQUEST_SOURCE_BRANCH_NAME}
+        - !reference [.install-plugin-from-branch, script]
         - vendor/bin/pest --parallel --ci --bail
 
 Linter:
@@ -41,7 +43,7 @@ Linter:
         - .rules-mr-events
         - .setup-project-playground-4
     script:
-        - composer require {{lower_author}}/{{lower_plugin}}-plugin:dev-${CI_MERGE_REQUEST_SOURCE_BRANCH_NAME}
+        - !reference [.install-plugin-from-branch, script]
         - php artisan linter:code -b plugins/{{lower_author}}/{{lower_plugin}}
 
 Danger-PHP:

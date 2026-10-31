@@ -65,3 +65,5 @@
     - "Restore from the trash only the records trashed together with their parent"
 1.16.1:
     - "Trash records before their dependents and restore only the dependents trashed together with them"
+1.16.2:
+    - "Update plugin stubs to PHPUnit 12 with the array mailer and the install-plugin-from-branch CI component"
